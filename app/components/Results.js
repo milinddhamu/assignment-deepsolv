@@ -52,7 +52,6 @@ const Results = ({searchValue,nationalitySearch}) => {
            />
         </div>
       ))}
-      {filteredData.length === 0 && <div className="flex justify-center">Fetching data</div>}
       {((filteredData.length === 0 && searchValue) || nationalitySearch) && <div className="flex justify-center">User not found</div>}
     </div>
   );
