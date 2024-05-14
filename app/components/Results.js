@@ -15,29 +15,22 @@ const Results = ({searchValue,nationalitySearch}) => {
   //     setFilteredData(data)
   //   })
   // })
-  const searchUser = (searchTerm) => {
-    return usersData.filter(user => 
-      user.name.first.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.name.last.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }
-  useEffect(()=>{
-    if(searchValue){
-      const results = searchUser(searchValue)
-      setFilteredData(results)
-    } else {
-      setFilteredData(usersData)
-    }
-  },[searchValue, usersData]);
-
   useEffect(() => {
-    if (nationalitySearch.length === 2) {
-      const newData = usersData.filter(user => user.nat === nationalitySearch);
-      setFilteredData(newData);
-    } else {
-      setFilteredData(usersData);
+    let results = usersData;
+
+    if (searchValue) {
+      results = results.filter(user => 
+        user.name.first.toLowerCase().includes(searchValue.toLowerCase()) ||
+        user.name.last.toLowerCase().includes(searchValue.toLowerCase())
+      );
     }
-  }, [nationalitySearch, usersData]);
+
+    if (nationalitySearch.length === 2) {
+      results = results.filter(user => user.nat === nationalitySearch);
+    }
+
+    setFilteredData(results);
+  }, [searchValue, nationalitySearch, usersData]);
   
   return (
     <div 

@@ -4,6 +4,7 @@ const cors = require('cors'); // Import cors module
 const app = express();
 app.use(cors())
 const data = require('./data.json');
+
 // Endpoint to handle GET requests for /results
 app.get('/results', (req, res) => {
 
@@ -19,21 +20,14 @@ app.get('/results', (req, res) => {
   // Send the results JSON to the client
   res.send(paginatedResults);
 });
-
-// Handle unrecognized routes
 app.use((req, res) => {
   res.status(404).send('404 - Not Found');
 });
-
-// Handle unsupported methods
 app.use((req, res) => {
   res.status(405).send('405 - Method Not Allowed');
 });
 
-// Set the port number
 const port = 3001;
-
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
