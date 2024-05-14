@@ -1807,7 +1807,7 @@ const Results = ({searchValue,nationalitySearch}) => {
   const [filteredData, setFilteredData] = useState([]);
   const [parent] = useAutoAnimate(/* optional config */)
   useEffect(()=>{
-    fetch(`http://localhost:3001/results`).then(res => res.json()).then(data => {
+    fetch(`https://assignment-deepsolv.onrender.com/results`).then(res => res.json()).then(data => {
       setUsersData(data)
       setFilteredData(data)
     })
