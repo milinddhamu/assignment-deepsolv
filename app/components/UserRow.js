@@ -13,7 +13,7 @@ const UserRow = ({data,isFirstChild,isLastChild}) => {
     <div className={`flex flex-row justify-between items-center w-full p-4 px-6 h-24 overflow-hidden gap-2 sm:gap-4 border border-gray-500/50 ${roundedCorners} hover:bg-white/10 hover:cursor-pointer transition-colors duration-300 rounded-sm`}>
       <div className="flex w-full h-full max-w-fit">
         <img 
-          src={"https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5"}
+          src={"https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5"} // api image is not working
           alt={email}
           className="rounded-full"
           aria-placeholder={email}
