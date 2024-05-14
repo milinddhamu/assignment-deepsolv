@@ -9,12 +9,14 @@ const Results = ({searchValue,nationalitySearch}) => {
   const [usersData, setUsersData] = useState(data);
   const [filteredData, setFilteredData] = useState(data);
   const [parent] = useAutoAnimate(/* optional config */)
+  
   // useEffect(()=>{
   //   fetch(`https://assignment-deepsolv.onrender.com/results`).then(res => res.json()).then(data => {
   //     setUsersData(data)
   //     setFilteredData(data)
   //   })
-  // })
+  // }) // node server is not running properly
+
   useEffect(() => {
     let results = usersData;
 
