@@ -37,7 +37,7 @@ const Results = ({searchValue,nationalitySearch}) => {
   return (
     <div 
       ref={parent}
-      className="flex flex-col gap-1 w-full justify-center max-w-screen-lg p-4">
+      className="flex flex-col gap-1 w-full justify-center max-w-screen-lg p-4 mt-20">
       {filteredData.map((user,index)=>(
         <div key={user.email}>
           <UserRow 
